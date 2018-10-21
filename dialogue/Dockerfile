@@ -1,4 +1,4 @@
-FROM snips-base:latest
+FROM zdock/snips-base:latest
 
 RUN apt-get update
 RUN apt-get install -y snips-dialogue
