@@ -1,0 +1,12 @@
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build snips-base image
+      script:
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t snips-base -f base/Dockerfile .
+      - docker images
+      - docker tag snips-base $DOCKER_USERNAME/snips-base
+      - docker push $DOCKER_USERNAME/snips-base
