@@ -1,4 +1,4 @@
-FROM snips-base:0.0.13
+FROM snips-base:latest
 
 RUN sed -i -e 's/main/main contrib non-free/g' /etc/apt/sources.list
 RUN apt-get update

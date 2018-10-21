@@ -1,4 +1,4 @@
-FROM snips-base:0.0.13
+FROM snips-base:latest
 
 RUN apt-get update
 RUN apt-get install -y snips-hotword
