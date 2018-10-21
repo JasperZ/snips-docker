@@ -5,8 +5,10 @@ jobs:
   include:
     - stage: build snips-base image
       script:
+      - cd base
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t snips-base -f base/Dockerfile .
+      - docker build -t snips-base .
+      - cd ..
       - docker images
       - docker tag snips-base $DOCKER_USERNAME/snips-base
       - docker push $DOCKER_USERNAME/snips-base
