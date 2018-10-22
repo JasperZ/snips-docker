@@ -22,43 +22,43 @@ jobs:
       - docker images
       - docker tag snips-asr $DOCKER_USERNAME/snips-asr
       - docker push $DOCKER_USERNAME/snips-asr
-    #
-    # - stage: build snips-dialogue image
-    #   script:
-    #   - cd dialogue
-    #   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    #   - docker build -t snips-dialogue .
-    #   - cd ..
-    #   - docker images
-    #   - docker tag snips-dialogue $DOCKER_USERNAME/snips-dialogue
-    #   - docker push $DOCKER_USERNAME/snips-dialogue
-    #
-    # - stage: build snips-hotword image
-    #   script:
-    #   - cd hotword
-    #   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    #   - docker build -t snips-hotword .
-    #   - cd ..
-    #   - docker images
-    #   - docker tag snips-hotword $DOCKER_USERNAME/snips-hotword
-    #   - docker push $DOCKER_USERNAME/snips-hotword
-    #
-    # - stage: build snips-nlu image
-    #   script:
-    #   - cd nlu
-    #   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    #   - docker build -t snips-nlu .
-    #   - cd ..
-    #   - docker images
-    #   - docker tag snips-nlu $DOCKER_USERNAME/snips-nlu
-    #   - docker push $DOCKER_USERNAME/snips-nlu
-    #
-    # - stage: build snips-tts image
-    #   script:
-    #   - cd tts
-    #   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    #   - docker build -t snips-tts .
-    #   - cd ..
-    #   - docker images
-    #   - docker tag snips-tts $DOCKER_USERNAME/snips-tts
-    #   - docker push $DOCKER_USERNAME/snips-tts
+
+    - stage: build snips-dialogue image
+      script:
+      - cd dialogue
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t snips-dialogue .
+      - cd ..
+      - docker images
+      - docker tag snips-dialogue $DOCKER_USERNAME/snips-dialogue
+      - docker push $DOCKER_USERNAME/snips-dialogue
+
+    - stage: build snips-hotword image
+      script:
+      - cd hotword
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t snips-hotword .
+      - cd ..
+      - docker images
+      - docker tag snips-hotword $DOCKER_USERNAME/snips-hotword
+      - docker push $DOCKER_USERNAME/snips-hotword
+
+    - stage: build snips-nlu image
+      script:
+      - cd nlu
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t snips-nlu .
+      - cd ..
+      - docker images
+      - docker tag snips-nlu $DOCKER_USERNAME/snips-nlu
+      - docker push $DOCKER_USERNAME/snips-nlu
+
+    - stage: build snips-tts image
+      script:
+      - cd tts
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t snips-tts .
+      - cd ..
+      - docker images
+      - docker tag snips-tts $DOCKER_USERNAME/snips-tts
+      - docker push $DOCKER_USERNAME/snips-tts
