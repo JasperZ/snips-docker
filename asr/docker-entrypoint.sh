@@ -22,8 +22,7 @@ if [ "$1" = 'snips-asr' ]; then
     echo "please mount the assistant folder to /assistant and set the needed environment variables"
     exit 1
   else
-    #exec "$1" --assistant "/assistant" --bus "mqtt" --mqtt "'$MQTT_HOST:$MQTT_PORT'" --mqtt_username "'$MQTT_USERNAME'" --mqtt_password "'$MQTT_PASSWORD'"
-    echo "$1" --assistant "/assistant" --bus "mqtt" --mqtt "'$MQTT_HOST:$MQTT_PORT'" --mqtt_username "'$MQTT_USERNAME'" --mqtt_password "'$MQTT_PASSWORD'"
+    exec "$1" --assistant "/assistant" --bus "mqtt" --mqtt "$MQTT_HOST:$MQTT_PORT" --mqtt_username "$MQTT_USERNAME" --mqtt_password "$MQTT_PASSWORD"
   fi
 fi
 
