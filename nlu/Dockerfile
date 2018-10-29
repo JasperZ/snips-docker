@@ -1,7 +1,7 @@
 FROM zdock/snips-base:latest
 
 RUN apt-get update
-RUN apt-get install -y snips-nlu
+RUN apt-get install -y snips-nlu=0.60.1
 
 RUN mkdir /assistant
 VOLUME /assistant

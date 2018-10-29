@@ -1,7 +1,7 @@
 FROM zdock/snips-base:latest
 
 RUN apt-get update
-RUN apt-get install -y snips-dialogue
+RUN apt-get install -y snips-dialogue=0.60.1
 
 RUN mkdir /assistant
 VOLUME /assistant
