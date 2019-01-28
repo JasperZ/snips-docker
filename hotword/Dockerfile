@@ -1,7 +1,7 @@
 FROM zdock/snips-base:latest
 
 RUN apt-get update
-RUN apt-get install -y snips-hotword=0.60.8 libasound2
+RUN apt-get install -y snips-hotword=0.60.12 libasound2
 
 RUN mkdir /assistant
 VOLUME /assistant
