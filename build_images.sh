@@ -28,7 +28,7 @@ docker build -t $DOCKER_USERNAME/snips-tts:$SNIPS_VERSION --build-arg snips_vers
 cd ..
 
 # build snips asr
-cd tts
+cd asr
 docker build -t $DOCKER_USERNAME/snips-asr:$SNIPS_VERSION --build-arg snips_version=$SNIPS_VERSION .
 cd ..
 
