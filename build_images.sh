@@ -27,6 +27,11 @@ cd tts
 docker build -t $DOCKER_USERNAME/snips-tts:$SNIPS_VERSION --build-arg snips_version=$SNIPS_VERSION .
 cd ..
 
+# build snips asr
+cd tts
+docker build -t $DOCKER_USERNAME/snips-asr:$SNIPS_VERSION --build-arg snips_version=$SNIPS_VERSION .
+cd ..
+
 # login to docker hub
 if [[ -z "${CI}" ]]; then
   docker login
@@ -40,3 +45,4 @@ docker push $DOCKER_USERNAME/snips-dialogue:$SNIPS_VERSION
 docker push $DOCKER_USERNAME/snips-hotword:$SNIPS_VERSION
 docker push $DOCKER_USERNAME/snips-nlu:$SNIPS_VERSION
 docker push $DOCKER_USERNAME/snips-tts:$SNIPS_VERSION
+docker push $DOCKER_USERNAME/snips-asr:$SNIPS_VERSION
