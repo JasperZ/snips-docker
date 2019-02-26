@@ -33,11 +33,7 @@ docker build -t $DOCKER_USERNAME/snips-asr:$SNIPS_VERSION --build-arg snips_vers
 cd ..
 
 # login to docker hub
-if [[ -z "${CI}" ]]; then
-  docker login
-else
-  docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-fi
+docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 # upload images
 docker images

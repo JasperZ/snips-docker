@@ -1,4 +1,6 @@
-FROM zdock/snips-base:latest
+ARG snips_version
+
+FROM zdock/snips-base:${snips_version}
 
 ARG snips_version
 
