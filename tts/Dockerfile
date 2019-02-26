@@ -1,8 +1,10 @@
 FROM zdock/snips-base:latest
 
+ARG snips_version
+
 RUN sed -i -e 's/main/main contrib non-free/g' /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -y snips-tts=0.61.1
+RUN apt-get install -y snips-tts=${snips_version}
 
 RUN mkdir /assistant
 VOLUME /assistant
